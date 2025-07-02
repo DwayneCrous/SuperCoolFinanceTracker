@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import * as echarts from "echarts";
+  import { color } from "chart.js/helpers";
 
   let greeting = "";
 
@@ -19,6 +20,7 @@
     const myChart = echarts.init(chartDom, "dark");
     const option = {
       backgroundColor: "transparent",
+      color: ["#a3d8f4", "#74c0fc", "#4dabf7"],
       title: {
         text: "Transactions Overview",
         left: "center",
@@ -34,7 +36,7 @@
         {
           name: "",
           type: "pie",
-          radius: "50%",
+          radius: "70%",
           data: [
             { value: 33, name: "Withdrawals" },
             { value: 33, name: "Deposits" },
@@ -161,7 +163,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    height: 325px;
+    height: 320px;
   }
 
   .div4 p {
