@@ -97,9 +97,21 @@
     <div class="parent">
       <div class="recent-transactions">
         <p>Recent Transactions</p>
+        <ul>
+          <li>Checking Account: + R500</li>
+          <li>Savings Account: + R200</li>
+          <li>Checking Account: - R150</li>
+          <li>Checking Account: -R100</li>
+        </ul>
       </div>
       <div class="recent-messages">
         <p>Recent Messages</p>
+        <ul>
+          <li>Deposit of R500 made into checking Account.</li>
+          <li>Deposit of R200 made into Savings Account.</li>
+          <li>Payment of R150 made to Utility Company.</li>
+          <li>Account created today, welcome to the site!</li>
+        </ul>
       </div>
       <div class="account-balances">
         <p>Account Balances</p>
@@ -151,6 +163,22 @@
     color: #e0e6ed;
   }
 
+  .recent-transactions ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .recent-transactions li {
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: #b0b8c1;
+    font-size: 18px;
+  }
+
   .recent-messages {
     grid-column-start: 1;
     grid-row-start: 2;
@@ -165,6 +193,22 @@
     margin: 0;
     font-size: 20px;
     color: #e0e6ed;
+  }
+
+  .recent-messages ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .recent-messages li {
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: #b0b8c1;
+    font-size: 18px;
   }
 
   .account-balances {
