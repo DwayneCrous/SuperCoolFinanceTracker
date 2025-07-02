@@ -34,7 +34,7 @@
       },
       series: [
         {
-          name: "",
+          name: "Percentage value",
           type: "pie",
           radius: "70%",
           data: [
