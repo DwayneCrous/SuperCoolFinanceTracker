@@ -25,9 +25,6 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 - **Search & Filter** 🟥
   Quickly find transactions by date, category, or description.
 
-- **Responsive Design** 🟥
-  Works seamlessly on desktop and mobile devices.
-
 - **Export Data** 🟥
   Export your transactions to CSV for backup or analysis.
 
