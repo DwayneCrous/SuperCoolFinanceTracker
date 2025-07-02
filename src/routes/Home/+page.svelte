@@ -16,9 +16,10 @@
   onMount(() => {
     greeting = getGreeting();
 
-    const chartDom = document.getElementById("pie-chart");
-    const myChart = echarts.init(chartDom, "dark");
-    const option = {
+    // Pie chart for transactions overview
+    const pieDom = document.getElementById("pie-chart");
+    const pieChart = echarts.init(pieDom, "dark");
+    const pieOption = {
       backgroundColor: "transparent",
       color: ["#a3d8f4", "#74c0fc", "#4dabf7"],
       title: {
@@ -52,7 +53,37 @@
         },
       ],
     };
-    myChart.setOption(option);
+    pieChart.setOption(pieOption);
+
+    // Bar chart for account balances
+    const barDom = document.getElementById("bar-graph");
+    const barChart = echarts.init(barDom, "dark");
+    const barOption = {
+      backgroundColor: "transparent",
+      xAxis: {
+        type: "value",
+        axisLabel: { color: "#e0e6ed" },
+      },
+      yAxis: {
+        type: "category",
+        data: ["Checking", "Savings", "Credit Card"],
+        axisLabel: { color: "#e0e6ed" },
+      },
+      series: [
+        {
+          data: [1234.56, 5678.9, 123.45],
+          type: "bar",
+          itemStyle: {
+            color: function (params) {
+              const colors = ["#b9fbc0", "#98f5c0", "#70e9a8"];
+              return colors[params.dataIndex];
+            },
+          },
+          barWidth: "70%",
+        },
+      ],
+    };
+    barChart.setOption(barOption);
   });
 </script>
 
@@ -64,16 +95,17 @@
     </div>
 
     <div class="parent">
-      <div class="div1">
+      <div class="recent-transactions">
         <p>Recent Transactions</p>
       </div>
-      <div class="div2">
+      <div class="recent-messages">
         <p>Recent Messages</p>
       </div>
-      <div class="div3">
+      <div class="account-balances">
         <p>Account Balances</p>
+        <div id="bar-graph"></div>
       </div>
-      <div class="div4">
+      <div class="pie-chart">
         <p>Pie Chart</p>
         <div class="chart-wrapper">
           <div id="pie-chart"></div>
@@ -103,7 +135,7 @@
     color: #e0e6ed;
   }
 
-  .div1 {
+  .recent-transactions {
     grid-column-start: 1;
     grid-row-start: 1;
     background-color: #222;
@@ -113,13 +145,13 @@
     border-radius: 10px;
   }
 
-  .div1 p {
+  .recent-transactions p {
     margin: 0;
     font-size: 20px;
     color: #e0e6ed;
   }
 
-  .div2 {
+  .recent-messages {
     grid-column-start: 1;
     grid-row-start: 2;
     background-color: #222;
@@ -129,13 +161,13 @@
     border-radius: 10px;
   }
 
-  .div2 p {
+  .recent-messages p {
     margin: 0;
     font-size: 20px;
     color: #e0e6ed;
   }
 
-  .div3 {
+  .account-balances {
     grid-column-start: 2;
     grid-row-start: 1;
     background-color: #222;
@@ -143,15 +175,18 @@
     padding: 20px;
     border: 1px solid #444;
     border-radius: 10px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
   }
 
-  .div3 p {
+  .account-balances p {
     margin: 0;
     font-size: 20px;
     color: #e0e6ed;
   }
 
-  .div4 {
+  .pie-chart {
     grid-column-start: 2;
     grid-row-start: 2;
     background-color: #222;
@@ -166,7 +201,7 @@
     height: 320px;
   }
 
-  .div4 p {
+  .pie-chart p {
     margin: 0 0 10px 0;
     font-size: 20px;
     text-align: left;
@@ -186,5 +221,12 @@
     height: 100%;
     display: block;
     background-color: transparent;
+  }
+
+  #bar-graph {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    margin-top: 0;
   }
 </style>
