@@ -85,7 +85,7 @@ Pull requests and suggestions are welcome! Please open an issue to discuss what 
 
 ## 📄 License
 
-MIT License
+This code is © DR Development and is not licensed for redistribution or modification.
 
 ---
 
