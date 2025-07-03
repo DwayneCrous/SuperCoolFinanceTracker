@@ -15,21 +15,32 @@ export const actions = {
     try {
       const data = await fs.readFile(usersPath, 'utf-8');
       users = JSON.parse(data);
-    } catch (e) {}
+    } catch (e) {
+
+    }
 
     if (users.find(u => u.username === username || u.email === email)) {
-      return fail(400, { error: 'User already exists.' });
+      return fail(400, {
+        form: {
+          error: 'User already exists.'
+        }
+      });
     }
 
     users.push({ username, email, password });
     await fs.writeFile(usersPath, JSON.stringify(users, null, 2));
-    return { success: true, message: 'Account created! Please login.' };
+
+    return {
+      form: {
+        message: 'Account created! Please login.'
+      }
+    };
   },
 
   login: async ({ request, cookies }) => {
     const form = await request.formData();
-    const username = form.get('login-username');
-    const password = form.get('login-password');
+    const username = form.get('username');
+    const password = form.get('password');
 
     let users = [];
     try {
@@ -39,7 +50,11 @@ export const actions = {
 
     const user = users.find(u => u.username === username && u.password === password);
     if (!user) {
-      return fail(401, { error: 'Invalid credentials.' });
+      return fail(401, {
+        form: {
+          error: 'Invalid credentials.'
+        }
+      });
     }
 
     cookies.set('username', username, {

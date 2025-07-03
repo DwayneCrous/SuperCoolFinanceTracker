@@ -1,16 +1,44 @@
 <script>
   export let form;
+  import butterup from "butteruptoasts";
+  import "butteruptoasts/src/butterup.css";
+  import { enhance } from "$app/forms";
+
+  let toastShown = false;
+
+  $: if (form?.error && !toastShown) {
+    butterup.toast({
+      title: "Error ❌",
+      message: form.error,
+      type: "error",
+      location: "top-right",
+      dismissable: true,
+    });
+    toastShown = true;
+  }
+
+  $: if (form?.message && !toastShown) {
+    butterup.toast({
+      title: "Success ✅",
+      message: form.message,
+      type: "success",
+      location: "top-right",
+      dismissable: true,
+    });
+    toastShown = true;
+  }
 </script>
 
 <main>
   <div class="parent">
     <div class="header">
       <h1>Welcome to Super Cool Finance Tracker App</h1>
-      <p>Please create and account or login to continue.</p>
+      <p>Please create an account or login to continue.</p>
     </div>
+
     <div class="create-account">
-      <p>Create Account<i class="fa-solid fa-plus"></i></p>
-      <form method="POST" action="?/createAccount">
+      <p>Create Account <i class="fa-solid fa-plus"></i></p>
+      <form method="POST" action="?/createAccount" use:enhance>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required />
 
@@ -21,32 +49,19 @@
         <input type="password" id="password" name="password" required />
 
         <button type="submit">Create Account</button>
-        {#if form?.error}
-          <p style="color:red">{form.error}</p>
-        {/if}
-        {#if form?.message}
-          <p style="color:green">{form.message}</p>
-        {/if}
       </form>
     </div>
+
     <div class="login">
-      <p>Login<i class="fa-solid fa-right-to-bracket"></i></p>
-      <form method="POST" action="?/login">
+      <p>Login <i class="fa-solid fa-right-to-bracket"></i></p>
+      <form method="POST" action="?/login" use:enhance>
         <label for="login-username">Username:</label>
-        <input type="text" id="login-username" name="login-username" required />
+        <input type="text" id="login-username" name="username" required />
 
         <label for="login-password">Password:</label>
-        <input
-          type="password"
-          id="login-password"
-          name="login-password"
-          required
-        />
+        <input type="password" id="login-password" name="password" required />
 
         <button type="submit">Login</button>
-        {#if form?.error}
-          <p style="color:red">{form.error}</p>
-        {/if}
       </form>
     </div>
   </div>
