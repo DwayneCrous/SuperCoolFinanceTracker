@@ -26,7 +26,7 @@ export const actions = {
     return { success: true, message: 'Account created! Please login.' };
   },
 
-  login: async ({ request }) => {
+  login: async ({ request, cookies }) => {
     const form = await request.formData();
     const username = form.get('login-username');
     const password = form.get('login-password');
@@ -41,6 +41,13 @@ export const actions = {
     if (!user) {
       return fail(401, { error: 'Invalid credentials.' });
     }
+
+    cookies.set('username', username, {
+      path: '/',
+      httpOnly: true,
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24
+    });
 
     throw redirect(303, '/Home');
   }

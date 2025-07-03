@@ -1,7 +1,9 @@
 <script>
+  export let data;
+  let userName = data.userName;
+
   import { onMount } from "svelte";
   import * as echarts from "echarts";
-  import { color } from "chart.js/helpers";
 
   let greeting = "";
 
@@ -90,7 +92,7 @@
 <main>
   <div class="container">
     <div class="header">
-      <h1 id="greeting">{greeting}, Dwayne!</h1>
+      <h1 id="greeting">{greeting}, {userName}!</h1>
       <p>Glad to see you again, here is your overview today.</p>
     </div>
 
