@@ -1,0 +1,64 @@
+{
+  "Checking Account": [
+    {
+      "id": 1,
+      "desc": "Groceries",
+      "amount": -200,
+      "category": "Food & Drink",
+      "type": "Withdrawal",
+      "date": "2025-07-04"
+    },
+    {
+      "id": 2,
+      "desc": "Salary",
+      "amount": 5000,
+      "category": "Income",
+      "type": "Deposit",
+      "date": "2025-07-01"
+    },
+    {
+      "id": 3,
+      "desc": "Marketing Income",
+      "amount": 1500,
+      "category": "Income",
+      "type": "Deposit",
+      "date": "2025-07-04"
+    }
+  ],
+  "Savings Account": [
+    {
+      "id": 1,
+      "desc": "Interest",
+      "amount": 50,
+      "category": "Income",
+      "type": "Deposit",
+      "date": "2025-07-03"
+    },
+    {
+      "id": 2,
+      "desc": "Transfer from Checking",
+      "amount": 1000,
+      "category": "Transfer",
+      "type": "Transfer",
+      "date": "2025-06-30"
+    }
+  ],
+  "Credit Card Account": [
+    {
+      "id": 1,
+      "desc": "Online Shopping",
+      "amount": -800,
+      "category": "Shopping",
+      "type": "Withdrawal",
+      "date": "2025-07-02"
+    },
+    {
+      "id": 2,
+      "desc": "Restaurant",
+      "amount": -250,
+      "category": "Food & Drink",
+      "type": "Withdrawal",
+      "date": "2025-06-28"
+    }
+  ]
+}
