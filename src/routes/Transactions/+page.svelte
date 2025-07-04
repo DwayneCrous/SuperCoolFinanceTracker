@@ -243,7 +243,9 @@
             {/each}
           </ul>
         {:else}
-          <p>No transactions found.</p>
+          <div class="no-transactions">
+            <p>No transactions found.</p>
+          </div>
         {/if}
       </div>
     </div>
@@ -384,5 +386,13 @@
     cursor: pointer;
     transition: background 0.2s;
     margin-left: 10px;
+  }
+
+  .no-transactions p {
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
   }
 </style>
