@@ -175,7 +175,7 @@
     margin-bottom: 10px;
     background-color: #333;
     border: 1px solid #444;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px 10px;
     color: #b0b8c1;
     font-size: 18px;
@@ -207,7 +207,7 @@
     margin-bottom: 10px;
     background-color: #333;
     border: 1px solid #444;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px 10px;
     color: #b0b8c1;
     font-size: 18px;

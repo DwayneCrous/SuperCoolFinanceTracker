@@ -1,4 +1,22 @@
 <script>
+  const transactions = {
+    "Checking Account": [
+      { id: 1, desc: "Groceries", amount: -200 },
+      { id: 2, desc: "Salary", amount: 5000 },
+    ],
+    "Savings Account": [
+      { id: 1, desc: "Interest", amount: 50 },
+      { id: 2, desc: "Transfer from Checking", amount: 1000 },
+    ],
+    "Credit Card Account": [
+      { id: 1, desc: "Online Shopping", amount: -800 },
+      { id: 2, desc: "Restaurant", amount: -250 },
+    ],
+  };
+
+  let selectedAccount = "Checking Account";
+
+  $: accountTransactions = transactions[selectedAccount] || [];
 </script>
 
 <main>
@@ -23,10 +41,14 @@
             <option value="option6">This Year</option>
             <option value="option7">Last Year</option>
           </select>
-          <select name="Filter By Account" id="dropdown_account">
-            <option value="option1">Checking Account</option>
-            <option value="option2">Savings Account</option>
-            <option value="option3">Credit Card Account</option>
+          <select
+            name="Filter By Account"
+            id="dropdown_account"
+            bind:value={selectedAccount}
+          >
+            <option value="Checking Account">Checking Account</option>
+            <option value="Savings Account">Savings Account</option>
+            <option value="Credit Card Account">Credit Card Account</option>
           </select>
           <select name="Filter By Category" id="dropdown_category">
             <option value="option1">Food & Drink</option>
@@ -51,7 +73,27 @@
         </div>
       </div>
       <div class="account-transactions">
-        <p>Account Transactions</p>
+        <div class="account-header">
+          <p>{selectedAccount}</p>
+          <button class="add-transaction" id="add-transactions"
+            >Add Transaction</button
+          >
+        </div>
+        <!-- <p>Total Balance: R{totalBalance}</p> -->
+        {#if accountTransactions.length > 0}
+          <ul class="transactions-list">
+            {#each accountTransactions as tx}
+              <li class={tx.amount >= 0 ? "income" : "expense"}>
+                <span class="transaction-desc">{tx.desc}</span>
+                <span class="transaction-amount">
+                  {tx.amount >= 0 ? "+" : ""}R{tx.amount}
+                </span>
+              </li>
+            {/each}
+          </ul>
+        {:else}
+          <p>No transactions found.</p>
+        {/if}
       </div>
     </div>
   </div>
@@ -73,7 +115,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
+    gap: 15px;
   }
 
   .filters {
@@ -84,7 +126,7 @@
     border: 1px solid #444;
     border-radius: 10px;
     display: flex;
-    flex-direction: column; /* stack p and selects vertically */
+    flex-direction: column;
     gap: 12px;
   }
 
@@ -98,7 +140,7 @@
   .filter-selects {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 15px;
     flex-wrap: wrap;
   }
 
@@ -111,12 +153,17 @@
     padding: 20px;
     border: 1px solid #444;
     border-radius: 10px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .account-transactions p {
     margin: 0;
     font-size: 20px;
     color: #e0e6ed;
+    flex-shrink: 0;
   }
   select {
     width: auto;
@@ -127,5 +174,64 @@
     border: 1px solid #444;
     background-color: #333;
     color: #e0e6ed;
+  }
+
+  .transactions-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    max-height: 100%;
+  }
+
+  .transactions-list li {
+    background: #333;
+    margin-bottom: 10px;
+    padding: 14px 18px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    transition: background 0.2s;
+  }
+
+  .transactions-list li.income {
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+  }
+
+  .transactions-list li.expense {
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+  }
+
+  .transaction-desc {
+    flex: 1;
+  }
+
+  .transaction-amount {
+    font-weight: bold;
+    margin-left: 18px;
+  }
+
+  .account-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0;
+  }
+
+  .add-transaction {
+    background: #333;
+    color: #e0e6ed;
+    border: 1px solid #444;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-left: 10px;
   }
 </style>
