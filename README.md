@@ -13,20 +13,23 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 - **Dashboard Overview** 🟨
   Get a quick snapshot of your financial health with charts and summaries.
 
-- **Income & Expense Tracking** 🟥
-  Log transactions, categorize them, and view detailed histories.
+- **View Recent Transactions** 🟨
+  View transactions from all accounts, filter them.
 
-- **Budget Management** 🟥 
+- **Login Screen** 🟨 
   Set monthly budgets for categories and track your progress.
 
-- **Data Visualization** 🟥
-  Interactive graphs and charts to help you understand your spending habits.
+- **Accounts tab** 🟥
+  View your accounts, manage them and create new ones.
 
-- **Search & Filter** 🟥
-  Quickly find transactions by date, category, or description.
+- **Settings Page** 🟥
+  Be able to change settings about the app.
 
-- **Export Data** 🟥
-  Export your transactions to CSV for backup or analysis.
+- **Messages** 🟥
+  View recent messages.
+
+- **Help Page** 🟥
+  A page for FAQ's and general tips.
 
 ---
 
@@ -85,7 +88,7 @@ Pull requests and suggestions are welcome! Please open an issue to discuss what 
 
 ## 📄 License
 
-This code is © DR Development and is not licensed for redistribution or modification.
+This code is © DR Development and is not licensed for redistribution or modification (for now idk).
 
 ---
 
