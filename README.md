@@ -80,12 +80,6 @@ To deploy your app, install an appropriate [SvelteKit adapter](https://svelte.de
 
 ---
 
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome! Please open an issue to discuss what you’d like to change.
-
----
-
 ## 📄 License
 
 This code is © DR Development and is not licensed for redistribution or modification (for now idk).
