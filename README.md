@@ -19,7 +19,7 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 - **Login Screen** 🟨 
   Set monthly budgets for categories and track your progress.
 
-- **Accounts tab** 🟥
+- **Accounts tab** 🟨
   View your accounts, manage them and create new ones.
 
 - **Settings Page** 🟥
