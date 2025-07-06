@@ -18,11 +18,11 @@
     },
     {
       "id": 3,
-      "desc": "Marketing Income",
+      "desc": "Marketing Salary",
       "amount": 1500,
       "category": "Income",
       "type": "Deposit",
-      "date": "2025-07-04"
+      "date": "2025-07-06"
     }
   ],
   "Savings Account": [

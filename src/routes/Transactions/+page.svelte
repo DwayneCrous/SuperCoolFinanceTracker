@@ -234,6 +234,7 @@
             {#each filteredTransactions as tx}
               <li class={tx.amount >= 0 ? "income" : "expense"}>
                 <span class="transaction-desc">{tx.desc}</span>
+                <span class="transaction-date">{tx.date}</span>
                 <span class="transaction-amount">
                   {tx.amount >= 0 ? "+" : "-"}R{Math.abs(tx.amount)}
                 </span>
@@ -388,6 +389,17 @@
     flex: 1 1 auto;
     overflow-y: auto;
     max-height: 100%;
+  }
+
+  .transaction-date {
+    margin-left: 18px;
+    color: #e0e6ed;
+    background-color: #333;
+    border: 1px solid #444;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 5px;
+    text-align: right;
   }
 
   .transactions-list li {
