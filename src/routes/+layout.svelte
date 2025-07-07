@@ -81,12 +81,12 @@
   }
 
   .side-nav-bar nav ul li {
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   .side-nav-bar nav ul li a {
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
     text-decoration: none;
     padding: 10px 20px;
     display: block;

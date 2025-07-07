@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1751884798117,
+    "type": "Checking",
+    "number": "23489579234875",
+    "recentTransaction": "",
+    "creationDate": "7/7/2025",
+    "balance": "1500"
+  },
+  {
+    "id": 1751885186610,
+    "type": "Savings",
+    "number": "8934857893475",
+    "recentTransaction": "",
+    "creationDate": "7/7/2025",
+    "balance": "1300"
+  }
+]
