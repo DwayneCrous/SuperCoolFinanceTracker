@@ -53,7 +53,7 @@
 
     {#if userName}
       <div class="user-profile">
-        <img src={avatarUrl} alt="Profile Picture" />
+        <img src={avatarUrl} alt="profile-pic" />
         <div class="profile-info">
           <p>{userName}</p>
           <form method="POST" action="/logout">
