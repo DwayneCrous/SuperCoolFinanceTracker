@@ -1,11 +1,10 @@
 <script>
   export let data;
-  let userName = data.userName;
-
   import { onMount } from "svelte";
   import * as echarts from "echarts";
 
   let greeting = "";
+  const userName = data.userName;
 
   function getGreeting() {
     const now = new Date();
@@ -86,6 +85,11 @@
       ],
     };
     barChart.setOption(barOption);
+
+    window.addEventListener("resize", () => {
+      pieChart.resize();
+      barChart.resize();
+    });
   });
 </script>
 
