@@ -98,7 +98,7 @@
 
     <div class="parent">
       <div class="recent-transactions">
-        <p>Recent Transactions</p>
+        <p><i class="fa-solid fa-wallet"></i> Recent Transactions</p>
         <ul>
           <li>Checking Account: + R500</li>
           <li>Savings Account: + R200</li>
@@ -107,7 +107,7 @@
         </ul>
       </div>
       <div class="recent-messages">
-        <p>Recent Messages</p>
+        <p><i class="fa-solid fa-message"></i> Recent Messages</p>
         <ul>
           <li>Deposit of R500 made into checking Account.</li>
           <li>Deposit of R200 made into Savings Account.</li>
@@ -116,11 +116,11 @@
         </ul>
       </div>
       <div class="account-balances">
-        <p>Account Balances</p>
+        <p><i class="fa-solid fa-chart-simple"></i> Account Balances</p>
         <div id="bar-graph"></div>
       </div>
       <div class="pie-chart">
-        <p>Pie Chart</p>
+        <p><i class="fa-solid fa-chart-pie"></i> Pie Chart</p>
         <div class="chart-wrapper">
           <div id="pie-chart"></div>
         </div>
