@@ -1,8 +1,10 @@
 <script>
-  export let data;
   import { onMount } from "svelte";
   import * as echarts from "echarts";
+  import butterup from "butteruptoasts";
+  import "butteruptoasts/src/butterup.css";
 
+  export let data;
   let greeting = "";
   const userName = data.userName;
 
@@ -16,6 +18,16 @@
 
   onMount(() => {
     greeting = getGreeting();
+
+    if (userName) {
+      butterup.toast({
+        title: "Login Successful✅",
+        message: `Welcome back, ${userName}`,
+        type: "success",
+        location: "top-right",
+        dismissable: true,
+      });
+    }
 
     // Pie chart for transactions overview
     const pieDom = document.getElementById("pie-chart");
