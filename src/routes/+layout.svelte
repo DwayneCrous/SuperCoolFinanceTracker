@@ -4,10 +4,11 @@
   const userId = data.userId;
   const avatar = data.avatar;
 
-  const avatarUrl =
-    userId && avatar
+  const avatarUrl = avatar?.startsWith("http")
+    ? avatar
+    : userId && avatar
       ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}.png`
-      : "https://cdn.discordapp.com/embed/avatars/0.png"; // fallback
+      : "https://cdn.discordapp.com/embed/avatars/0.png";
 </script>
 
 <svelte:head>
