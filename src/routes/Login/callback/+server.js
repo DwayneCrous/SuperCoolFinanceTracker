@@ -23,7 +23,6 @@ export async function GET({ url, cookies, fetch }) {
   const tokenData = await tokenRes.json();
   const accessToken = tokenData.access_token;
 
-  // Fetch user info
   const userRes = await fetch('https://discord.com/api/users/@me', {
     headers: {
       Authorization: `Bearer ${accessToken}`
@@ -34,8 +33,19 @@ export async function GET({ url, cookies, fetch }) {
 
   if (!user?.username) return json({ error: 'Failed to fetch Discord user' }, { status: 500 });
 
-  // Set cookie with username (or ID, or both)
   cookies.set('username', user.username, {
+    path: '/',
+    httpOnly: true,
+    maxAge: 60 * 60 * 24,
+    sameSite: 'lax'
+  });
+  cookies.set('userid', user.id, {
+    path: '/',
+    httpOnly: true,
+    maxAge: 60 * 60 * 24,
+    sameSite: 'lax'
+  });
+  cookies.set('avatar', user.avatar, {
     path: '/',
     httpOnly: true,
     maxAge: 60 * 60 * 24,

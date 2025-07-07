@@ -1,3 +1,15 @@
+<script>
+  export let data;
+  const userName = data.userName;
+  const userId = data.userId;
+  const avatar = data.avatar;
+
+  const avatarUrl =
+    userId && avatar
+      ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}.png`
+      : "https://cdn.discordapp.com/embed/avatars/0.png"; // fallback
+</script>
+
 <svelte:head>
   <link
     rel="stylesheet"
@@ -38,6 +50,19 @@
         </li>
       </ul>
     </nav>
+
+    {#if userName}
+      <div class="user-profile">
+        <img src={avatarUrl} alt="Profile Picture" />
+        <div class="profile-info">
+          <p>{userName}</p>
+          <form method="POST" action="/logout">
+            <button type="submit" class="logout-button">Logout</button>
+          </form>
+        </div>
+      </div>
+    {/if}
+
     <footer>
       <p>2025 DR Development</p>
     </footer>
@@ -120,5 +145,51 @@
     margin-left: 255px;
     flex: 1;
     padding: 40px;
+  }
+
+  .user-profile {
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0e6ed;
+  }
+
+  .user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #444;
+  }
+
+  .user-profile p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logout-button {
+    margin-top: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .logout-button:hover {
+    background-color: #555;
   }
 </style>
