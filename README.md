@@ -16,8 +16,8 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 - **View Recent Transactions** 🟨
   View transactions from all accounts, filter them.
 
-- **Login Screen** 🟨 
-  Set monthly budgets for categories and track your progress.
+- **Login Screen** ✅ 
+  Login with Discord account.
 
 - **Accounts tab** 🟨
   View your accounts, manage them and create new ones.
