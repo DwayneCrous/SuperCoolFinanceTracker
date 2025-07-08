@@ -105,37 +105,46 @@
   </div>
 
   {#if showModal}
-    <div class="modal-backdrop">
+    <div class="modal-overlay">
       <div class="modal">
-        <h2>Add Account</h2>
+        <div class="modal-header">
+          <h2>Add Account</h2>
+          <button class="close-modal" on:click={() => (showModal = false)}
+            >×</button
+          >
+        </div>
 
-        <label>
-          Account Type:
-          <select bind:value={type}>
-            <option>Checking</option>
-            <option>Savings</option>
-            <option>Credit</option>
-          </select>
-        </label>
+        <div class="modal-content">
+          <div class="form-group">
+            <label>Account Type:</label>
+            <select bind:value={type}>
+              <option>Checking</option>
+              <option>Savings</option>
+              <option>Credit</option>
+            </select>
+          </div>
 
-        <label>
-          Account Number:
-          <input type="text" bind:value={number} />
-        </label>
+          <div class="form-group">
+            <label>Account Number:</label>
+            <input type="text" bind:value={number} />
+          </div>
 
-        <label>
-          Balance:
-          <input type="text" bind:value={balance} />
-        </label>
+          <div class="form-group">
+            <label>Balance:</label>
+            <input type="text" bind:value={balance} />
+          </div>
 
-        <label>
-          Recent Transaction:
-          <input type="text" bind:value={recentTransaction} />
-        </label>
+          <div class="form-group">
+            <label>Recent Transaction:</label>
+            <input type="text" bind:value={recentTransaction} />
+          </div>
 
-        <div class="buttons">
-          <button on:click={addAccountFromModal}>Save</button>
-          <button on:click={() => (showModal = false)}>Cancel</button>
+          <div class="modal-actions">
+            <button class="btn-add" on:click={addAccountFromModal}>Save</button>
+            <button class="btn-cancel" on:click={() => (showModal = false)}
+              >Cancel</button
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -196,6 +205,7 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #51576d;
     text-align: center;
+    color: #c6d0f5;
   }
 
   .account-details p {
@@ -203,58 +213,100 @@
     margin: 5px 0;
   }
 
-  .modal-backdrop {
+  .modal-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    z-index: 1000;
   }
 
   .modal {
     background: #292c3c;
     color: #c6d0f5;
-    padding: 2rem;
+    padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #51576d;
   }
 
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .modal h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #c6d0f5;
+  }
+
+  .close-modal {
+    background: transparent;
+    border: none;
+    color: #c6d0f5;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   label {
-    display: block;
-    margin-bottom: 1rem;
+    font-size: 14px;
     color: #a5adce;
   }
 
   input,
   select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    background: #414559;
-    border: 1px solid #51576d;
+    padding: 10px;
     border-radius: 5px;
+    border: 1px solid #51576d;
+    background-color: #414559;
     color: #c6d0f5;
-    font-size: 15px;
+    font-size: 16px;
   }
 
-  .buttons {
+  .modal-actions {
     display: flex;
-    gap: 15px;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
   }
 
-  .buttons button {
-    padding: 10px 20px;
+  .btn-add,
+  .btn-cancel {
     background: #414559;
-    border: 1px solid #51576d;
     color: #c6d0f5;
-    cursor: pointer;
+    border: 1px solid #51576d;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
     transition: background 0.2s;
   }
 
-  .buttons button:hover {
+  .btn-add:hover,
+  .btn-cancel:hover {
     background: #51576d;
   }
 </style>

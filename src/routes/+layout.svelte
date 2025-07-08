@@ -47,7 +47,10 @@
           <a href="/Settings"><i class="fa-solid fa-gear"></i>Settings</a>
         </li>
         <li>
-          <a href="/Help"><i class="fa-solid fa-circle-info"></i>Help</a>
+          <a href="/Help"><i class="fa-solid fa-circle-question"></i>Help</a>
+        </li>
+        <li>
+          <a href="/AboutUs"><i class="fa-solid fa-circle-info"></i>About Us</a>
         </li>
       </ul>
     </nav>
