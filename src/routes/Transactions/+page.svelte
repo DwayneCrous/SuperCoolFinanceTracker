@@ -308,12 +308,12 @@
 <style>
   h1 {
     margin-top: 0;
-    color: #e0e6ed;
+    color: #c6d0f5;
     margin-bottom: 8px;
   }
 
   .header p {
-    color: #b0b8c1;
+    color: #a5adce;
     margin-bottom: 40px;
   }
 
@@ -326,10 +326,10 @@
 
   .filters {
     grid-column: span 3 / span 3;
-    background-color: #222;
-    color: #e0e6ed;
+    background-color: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -339,7 +339,7 @@
   .filters p {
     margin: 0;
     font-size: 20px;
-    color: #e0e6ed;
+    color: #c6d0f5;
     align-self: flex-start;
   }
 
@@ -354,10 +354,10 @@
     grid-column: span 3 / span 3;
     grid-row: span 4 / span 4;
     grid-row-start: 2;
-    background-color: #222;
-    color: #e0e6ed;
+    background-color: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     border-radius: 10px;
     height: 550px;
     display: flex;
@@ -368,18 +368,19 @@
   .account-transactions p {
     margin: 0;
     font-size: 20px;
-    color: #e0e6ed;
+    color: #c6d0f5;
     flex-shrink: 0;
   }
+
   select {
     width: auto;
     min-width: 160px;
     padding: 10px;
     margin-top: 0;
     border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #333;
-    color: #e0e6ed;
+    border: 1px solid #51576d;
+    background-color: #414559;
+    color: #c6d0f5;
   }
 
   .transactions-list {
@@ -393,9 +394,9 @@
 
   .transaction-date {
     margin-left: 18px;
-    color: #e0e6ed;
-    background-color: #333;
-    border: 1px solid #444;
+    color: #c6d0f5;
+    background-color: #414559;
+    border: 1px solid #51576d;
     font-size: 14px;
     padding: 4px;
     border-radius: 5px;
@@ -403,7 +404,7 @@
   }
 
   .transactions-list li {
-    background: #333;
+    background: #414559;
     margin-bottom: 10px;
     padding: 14px 18px;
     border-radius: 5px;
@@ -415,13 +416,13 @@
   }
 
   .transactions-list li.income {
-    border: 1px solid #2ecc71;
-    color: #2ecc71;
+    border: 1px solid #a6d189;
+    color: #a6d189;
   }
 
   .transactions-list li.expense {
-    border: 1px solid #e74c3c;
-    color: #e74c3c;
+    border: 1px solid #e78284;
+    color: #e78284;
   }
 
   .transaction-desc {
@@ -440,9 +441,9 @@
   }
 
   .add-transaction {
-    background: #333;
-    color: #e0e6ed;
-    border: 1px solid #444;
+    background: #414559;
+    color: #c6d0f5;
+    border: 1px solid #51576d;
     padding: 10px 22px;
     border-radius: 5px;
     font-size: 16px;
@@ -452,8 +453,8 @@
   }
 
   .no-transactions p {
-    background-color: #333;
-    border: 1px solid #444;
+    background-color: #414559;
+    border: 1px solid #51576d;
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
@@ -473,8 +474,8 @@
   }
 
   .modal {
-    background: #222;
-    color: #e0e6ed;
+    background: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
     border-radius: 10px;
     width: 90%;
@@ -492,13 +493,13 @@
   .modal h2 {
     margin: 0;
     font-size: 22px;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   .close-modal {
     background: transparent;
     border: none;
-    color: #e0e6ed;
+    color: #c6d0f5;
     font-size: 18px;
     cursor: pointer;
   }
@@ -517,16 +518,16 @@
 
   label {
     font-size: 14px;
-    color: #b0b8c1;
+    color: #a5adce;
   }
 
   input,
   select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #333;
-    color: #e0e6ed;
+    border: 1px solid #51576d;
+    background-color: #414559;
+    color: #c6d0f5;
     font-size: 16px;
   }
 
@@ -539,9 +540,9 @@
 
   .btn-add,
   .btn-cancel {
-    background: #333;
-    color: #e0e6ed;
-    border: 1px solid #444;
+    background: #414559;
+    color: #c6d0f5;
+    border: 1px solid #51576d;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
@@ -551,6 +552,6 @@
 
   .btn-add:hover,
   .btn-cancel:hover {
-    background: #444;
+    background: #51576d;
   }
 </style>

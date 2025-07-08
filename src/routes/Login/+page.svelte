@@ -26,17 +26,17 @@
   main {
     display: flex;
     height: auto;
-    padding-top: 300px;
+    padding-top: 270px;
     justify-content: center;
     align-items: center;
-    background-color: #111;
+    background-color: #303446;
   }
 
   .container {
-    background-color: #222;
+    background-color: #292c3c;
     padding: 40px;
     border-radius: 15px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   }
@@ -45,12 +45,12 @@
     margin: 0;
     margin-bottom: 10px;
     font-size: 28px;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   p {
     margin-bottom: 30px;
-    color: #b0b8c1;
+    color: #a5adce;
   }
 
   .login-buttons {
@@ -85,16 +85,20 @@
   }
 
   button.google {
-    background: white;
-    color: #444;
+    background: #ffffff;
+    color: #444444;
   }
 
   button.google:hover {
-    background: #f5f5f5;
+    background: #dad9d9;
   }
 
   button.github {
-    background-color: #23272a;
-    color: #e0e6ed;
+    background-color: #414559;
+    color: #c6d0f5;
+  }
+
+  button.github:hover {
+    background-color: #51576d;
   }
 </style>

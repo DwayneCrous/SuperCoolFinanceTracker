@@ -145,12 +145,12 @@
 <style>
   .header h1 {
     margin-top: 0;
-    color: #e0e6ed;
+    color: #c6d0f5;
     margin-bottom: 8px;
   }
 
   .header p {
-    color: #b0b8c1;
+    color: #a5adce;
     margin-bottom: 40px;
   }
 
@@ -162,39 +162,44 @@
 
   .account-actions {
     grid-column: span 3;
-    background-color: #222;
+    background-color: #292c3c;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     display: flex;
     gap: 10px;
   }
 
   .account-actions button {
-    background-color: #333;
-    color: #e0e6ed;
-    border: 1px solid #444;
+    background-color: #414559;
+    color: #c6d0f5;
+    border: 1px solid #51576d;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .account-actions button:hover {
+    background-color: #51576d;
   }
 
   .account-details {
-    background-color: #222;
+    background-color: #292c3c;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
   }
 
   .account-header {
     padding-bottom: 15px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #51576d;
     text-align: center;
   }
 
   .account-details p {
-    color: #e0e6ed;
+    color: #c6d0f5;
     margin: 5px 0;
   }
 
@@ -208,17 +213,18 @@
   }
 
   .modal {
-    background: #222;
-    color: #e0e6ed;
+    background: #292c3c;
+    color: #c6d0f5;
     padding: 2rem;
     border-radius: 10px;
     width: 400px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
   }
 
   label {
     display: block;
     margin-bottom: 1rem;
+    color: #a5adce;
   }
 
   input,
@@ -226,10 +232,11 @@
     width: 100%;
     padding: 8px;
     margin-top: 4px;
-    background: #333;
-    border: 1px solid #444;
+    background: #414559;
+    border: 1px solid #51576d;
     border-radius: 5px;
-    color: white;
+    color: #c6d0f5;
+    font-size: 15px;
   }
 
   .buttons {
@@ -239,10 +246,15 @@
 
   .buttons button {
     padding: 10px 20px;
-    background: #333;
-    border: 1px solid #444;
-    color: white;
+    background: #414559;
+    border: 1px solid #51576d;
+    color: #c6d0f5;
     cursor: pointer;
     border-radius: 5px;
+    transition: background 0.2s;
+  }
+
+  .buttons button:hover {
+    background: #51576d;
   }
 </style>

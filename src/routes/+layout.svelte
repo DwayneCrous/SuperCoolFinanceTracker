@@ -84,13 +84,13 @@
     font-family: Arial, sans-serif;
     display: flex;
     min-height: 100vh;
-    background-color: #111;
+    background-color: #303446;
   }
 
   .side-nav-bar {
     width: 255px;
-    background: #222;
-    border-right: 1px solid #444;
+    background: #292c3c;
+    border-right: 1px solid #51576d;
     padding: 20px 0;
     position: fixed;
     height: 100vh;
@@ -111,7 +111,7 @@
   }
 
   .side-nav-bar nav ul li a {
-    color: #fff;
+    color: #c6d0f5;
     font-size: 20px;
     text-decoration: none;
     padding: 10px 20px;
@@ -120,8 +120,8 @@
   }
 
   .side-nav-bar nav ul li a:hover {
-    background: #444;
-    border: 1px solid #555;
+    background: #51576d;
+    border: 1px solid #737994;
   }
 
   .side-nav-bar nav ul li i {
@@ -134,9 +134,9 @@
     left: 0;
     bottom: 0;
     width: 255px;
-    background: #222;
-    border-top: 1px solid #444;
-    color: #fff;
+    background: #292c3c;
+    border-top: 1px solid #51576d;
+    color: #b5bfe2;
     text-align: center;
     padding: 3px 0;
     font-size: 14px;
@@ -146,25 +146,26 @@
     margin-left: 255px;
     flex: 1;
     padding: 40px;
+    background-color: #303446;
   }
 
   .user-profile {
-    background-color: #333;
-    border: 1px solid #444;
+    background-color: #414559;
+    border: 1px solid #626880;
     border-radius: 12px;
     padding: 10px;
     margin: 20px 10px;
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #e0e6ed;
+    color: #b5bfe2;
   }
 
   .user-profile img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid #444;
+    border: 1px solid #626880;
   }
 
   .user-profile p {
@@ -182,15 +183,15 @@
     margin-top: 6px;
     padding: 4px 8px;
     font-size: 12px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #444;
+    background-color: #51576d;
+    color: #c6d0f5;
+    border: 1px solid #626880;
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s ease;
   }
 
   .logout-button:hover {
-    background-color: #555;
+    background-color: #737994;
   }
 </style>

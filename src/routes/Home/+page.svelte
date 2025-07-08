@@ -148,12 +148,12 @@
 <style>
   h1 {
     margin-top: 0;
-    color: #e0e6ed;
+    color: #c6d0f5;
     margin-bottom: 8px;
   }
 
   .header p {
-    color: #b0b8c1;
+    color: #a5adce;
     margin-bottom: 40px;
   }
 
@@ -162,23 +162,23 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 15px;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   .recent-transactions {
     grid-column-start: 1;
     grid-row-start: 1;
-    background-color: #222;
-    color: #e0e6ed;
+    background-color: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     border-radius: 10px;
   }
 
   .recent-transactions p {
     margin: 0;
     font-size: 20px;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   .recent-transactions ul {
@@ -189,28 +189,28 @@
 
   .recent-transactions li {
     margin-bottom: 10px;
-    background-color: #333;
-    border: 1px solid #444;
+    background-color: #414559;
+    border: 1px solid #51576d;
     border-radius: 5px;
     padding: 10px 10px;
-    color: #b0b8c1;
+    color: #a5adce;
     font-size: 18px;
   }
 
   .recent-messages {
     grid-column-start: 1;
     grid-row-start: 2;
-    background-color: #222;
-    color: #e0e6ed;
+    background-color: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     border-radius: 10px;
   }
 
   .recent-messages p {
     margin: 0;
     font-size: 20px;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   .recent-messages ul {
@@ -221,21 +221,21 @@
 
   .recent-messages li {
     margin-bottom: 10px;
-    background-color: #333;
-    border: 1px solid #444;
+    background-color: #414559;
+    border: 1px solid #51576d;
     border-radius: 5px;
     padding: 10px 10px;
-    color: #b0b8c1;
+    color: #a5adce;
     font-size: 18px;
   }
 
   .account-balances {
     grid-column-start: 2;
     grid-row-start: 1;
-    background-color: #222;
-    color: #e0e6ed;
+    background-color: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     border-radius: 10px;
     height: 320px;
     display: flex;
@@ -245,16 +245,16 @@
   .account-balances p {
     margin: 0;
     font-size: 20px;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   .pie-chart {
     grid-column-start: 2;
     grid-row-start: 2;
-    background-color: #222;
-    color: #e0e6ed;
+    background-color: #292c3c;
+    color: #c6d0f5;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #51576d;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -267,7 +267,7 @@
     margin: 0 0 10px 0;
     font-size: 20px;
     text-align: left;
-    color: #e0e6ed;
+    color: #c6d0f5;
   }
 
   .chart-wrapper {
