@@ -7,7 +7,7 @@
   <div class="parent">
     <div class="greeting-block">
       <p class="greeting-block-heading">
-        My name is Dwayne and this is Super Cool Finance Tracker App.
+        My name is Dwayne and this is Super Cool Finance Tracker App!
       </p>
     </div>
     <div class="scfta-reason">

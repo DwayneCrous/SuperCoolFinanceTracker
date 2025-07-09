@@ -41,6 +41,14 @@
       "category": "Transfer",
       "type": "Transfer",
       "date": "2025-06-30"
+    },
+    {
+      "id": 3,
+      "desc": "Gambling",
+      "amount": 10005,
+      "category": "Income",
+      "type": "Deposit",
+      "date": "2025-07-09"
     }
   ],
   "Credit Card Account": [
