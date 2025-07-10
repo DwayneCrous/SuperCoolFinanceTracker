@@ -23,6 +23,14 @@
       "category": "Income",
       "type": "Deposit",
       "date": "2025-07-06"
+    },
+    {
+      "id": 4,
+      "desc": "Gablming",
+      "amount": 500,
+      "category": "Income",
+      "type": "Deposit",
+      "date": "2025-07-10"
     }
   ],
   "Savings Account": [

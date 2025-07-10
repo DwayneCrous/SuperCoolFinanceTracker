@@ -70,7 +70,7 @@
     .filter((tx) => {
       // Filtering the date
       if (selectedDate === "all") return true;
-      const today = new Date("2025-07-04");
+      const today = new Date();
       const txDate = new Date(tx.date);
       switch (selectedDate) {
         case "today":
