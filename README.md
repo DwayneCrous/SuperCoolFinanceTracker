@@ -25,7 +25,7 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 - **Settings Page** 🟥
   Be able to change settings about the app.
 
-- **Messages** 🟥
+- **Messages** 🟨
   View recent messages.
 
 - **Help Page** 🟥
