@@ -1,0 +1,17 @@
+[
+  { "text": "Welcome to your message center!", "date": "2025-07-10" },
+  { "text": "Your account balance has been updated.", "date": "2025-07-09" },
+  { "text": "A new transaction has been posted.", "date": "2025-07-08" },
+  { "text": "Your monthly statement is ready to view.", "date": "2025-07-07" },
+  { "text": "Don't forget to check out our new features!", "date": "2025-07-06" },
+  { "text": "Your password was successfully changed.", "date": "2025-07-05" },
+  { "text": "A new login was detected from a different device.", "date": "2025-07-04" },
+  { "text": "Your scheduled payment has been processed.", "date": "2025-07-03" },
+  { "text": "You have received a new message from support.", "date": "2025-07-02" },
+  { "text": "Your profile information has been updated.", "date": "2025-07-01" },
+  { "text": "Your account has been temporarily locked due to suspicious activity.", "date": "2025-06-30" },
+  { "text": "A new beneficiary has been added to your account.", "date": "2025-06-29" },
+  { "text": "Your recent transaction exceeded your set limit.", "date": "2025-06-28" },
+  { "text": "Your subscription has been successfully renewed.", "date": "2025-06-27" },
+  { "text": "A new promotional offer is available for you.", "date": "2025-06-26" }
+]
