@@ -26,7 +26,7 @@
   main {
     display: flex;
     height: auto;
-    padding-top: 270px;
+    padding-top: 210px;
     justify-content: center;
     align-items: center;
     background-color: #303446;
