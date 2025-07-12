@@ -90,6 +90,11 @@
 </main>
 
 <style>
+  /* I notice now that I really do not like css very much.
+  Like honestly dude there's em, rem, px, vh, vw, vmin, vmax, ch,
+  in, cm, mm, pt, ex AHHHHHHHHH */
+
+  /* Do not even get me started on responsive design :( */
   h1 {
     margin-top: 0;
     color: #c6d0f5;

@@ -28,7 +28,7 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 - **Messages** 🟨
   View recent messages.
 
-- **Help Page** 🟥
+- **Help Page** 🟨
   A page for FAQ's and general tips.
 
 ---
