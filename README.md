@@ -17,7 +17,7 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
   View transactions from all accounts, filter them.
 
 - **Login Screen** ✅ 
-  Login with Discord account.
+  Login with Discord, Google or Github account.
 
 - **Accounts tab** 🟨
   View your accounts, manage them and create new ones.
