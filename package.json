@@ -19,12 +19,18 @@
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
+		],
+		"ignoredBuiltDependencies": [
+			"better-sqlite3",
+			"sqlite3",
+			"windows-build-tools"
 		]
 	},
 	"dependencies": {
-		"butterup": "^0.0.1",
+		"better-sqlite3": "^12.2.0",
 		"butteruptoasts": "^2.0.1",
 		"chart.js": "^4.5.0",
-		"echarts": "^5.6.0"
+		"echarts": "^5.6.0",
+		"uuid": "^9.0.1"
 	}
 }
