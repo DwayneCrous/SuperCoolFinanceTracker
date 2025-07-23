@@ -12,52 +12,49 @@
   async function loadAccounts() {
     try {
       const res = await fetch("/Accounts");
-      const text = await res.text();
-
-      try {
-        accounts = JSON.parse(text);
-        if (!Array.isArray(accounts)) accounts = [];
-      } catch (parseError) {
-        console.error("Failed to parse JSON from /Accounts:", parseError);
-        accounts = [];
-      }
+      const data = await res.json();
+      accounts = Array.isArray(data) ? data : [];
     } catch (err) {
       console.error("Error fetching accounts:", err);
       accounts = [];
     }
   }
 
-  async function saveAccounts() {
+  async function saveAccount(account) {
     try {
       await fetch("/Accounts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(accounts),
+        body: JSON.stringify(account),
       });
+      // Reload accounts after saving
+      await loadAccounts();
     } catch (err) {
-      console.error("Error saving accounts:", err);
+      console.error("Error saving account:", err);
     }
   }
 
-  function addAccountFromModal() {
+  async function addAccountFromModal() {
+    // Use YYYY-MM-DD format for SQLite DATE
+    const pad = (n) => n.toString().padStart(2, "0");
+    const now = new Date();
+    const creationDate = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
     const newAccount = {
-      id: Date.now(),
       type,
       number,
       recentTransaction,
-      creationDate: new Date().toLocaleDateString("en-US"),
+      creationDate,
       balance,
     };
-
-    accounts = [...accounts, newAccount];
-    saveAccounts();
+    await saveAccount(newAccount);
     resetForm();
     showModal = false;
   }
 
+  // Remove account logic would need a DELETE endpoint in the server
+  // For now, just reload accounts
   function removeAccount() {
-    accounts = accounts.slice(0, -1);
-    saveAccounts();
+    loadAccounts();
   }
 
   function resetForm() {

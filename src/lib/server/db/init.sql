@@ -7,13 +7,14 @@ CREATE TABLE IF NOT EXISTS Users (
   email TEXT
 );
 
--- Users accounts table
+-- Accounts table
 CREATE TABLE IF NOT EXISTS Accounts (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER,
   account_name TEXT CHECK(account_name IN ('cheque', 'savings', 'credit')),
   balance REAL DEFAULT 0.0,
   account_type TEXT,
+  date DATE,
   FOREIGN KEY (user_id) REFERENCES Users(id)
 );
 
