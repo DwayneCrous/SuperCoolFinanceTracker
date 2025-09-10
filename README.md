@@ -80,10 +80,5 @@ To deploy your app, install an appropriate [SvelteKit adapter](https://svelte.de
 
 ---
 
-## 📄 License
-
-This code is © DR Development and is not licensed for redistribution or modification (for now idk).
-
----
-
 **SuperCoolFinanceTracker** — Take control of your finances
+
