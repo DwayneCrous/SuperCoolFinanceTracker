@@ -6,30 +6,30 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 ✅- feature is fully complete and implemented
 🟨- feature is currently being worked on
 🟥- not yet started
+
 ---
 
 ## 🚀 Features
 
-- **Dashboard Overview** 🟨
-  Get a quick snapshot of your financial health with charts and summaries.
+-   **Dashboard Overview** 🟨
+    Get a quick snapshot of your financial health with charts and summaries!
 
-- **View Recent Transactions** 🟨
-  View transactions from all accounts, filter them.
+-   **View Recent Transactions** 🟨
+    View transactions from all accounts, filter them.
 
-- **Login Screen** ✅ 
-  Login with Discord, Google or Github account.
+-   **Login Screen** ✅
+    Login with Username and Password.
+-   **Accounts tab** 🟨
+    View your accounts, manage them and create new ones.
 
-- **Accounts tab** 🟨
-  View your accounts, manage them and create new ones.
+-   **Settings Page** 🟥
+    Be able to change settings about the app.
 
-- **Settings Page** 🟥
-  Be able to change settings about the app.
+-   **Messages** 🟨
+    View recent messages.
 
-- **Messages** 🟨
-  View recent messages.
-
-- **Help Page** 🟨
-  A page for FAQ's and general tips.
+-   **Help Page** 🟨
+    A page for FAQ's and general tips.
 
 ---
 
@@ -81,4 +81,3 @@ To deploy your app, install an appropriate [SvelteKit adapter](https://svelte.de
 ---
 
 **SuperCoolFinanceTracker** — Take control of your finances
-
