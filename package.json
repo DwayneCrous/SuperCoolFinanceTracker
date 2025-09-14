@@ -7,7 +7,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''"
+		"prepare": "svelte-kit sync || echo ''",
+		"setup": "node scripts/setup.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.0.0",
@@ -18,19 +19,23 @@
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
-			"esbuild"
-		],
-		"ignoredBuiltDependencies": [
-			"better-sqlite3",
-			"sqlite3",
-			"windows-build-tools"
+			"esbuild",
+			"sqlite3"
 		]
 	},
 	"dependencies": {
-		"better-sqlite3": "^12.2.0",
 		"butteruptoasts": "^2.0.1",
 		"chart.js": "^4.5.0",
 		"echarts": "^5.6.0",
+		"jose": "^6.1.0",
+		"sqlite": "^5.1.1",
+		"sqlite3": "^5.1.7",
 		"uuid": "^9.0.1"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"volta": {
+		"node": "20.19.5"
 	}
 }

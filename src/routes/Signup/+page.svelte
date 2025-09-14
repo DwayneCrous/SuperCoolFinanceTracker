@@ -1,20 +1,26 @@
 <script>
 	let username = "";
+	let email = "";
 	let password = "";
+	let confirmPassword = "";
 
-	function handleLogin(event) {
+	function handleSignup(event) {
 		event.preventDefault();
-		// Handle login logic here
-		console.log("Login attempt:", { username, password });
+		if (password !== confirmPassword) {
+			alert("Passwords do not match");
+			return;
+		}
+		// Handle signup logic here
+		console.log("Signup attempt:", { username, email, password });
 	}
 </script>
 
 <main>
 	<div class="container">
-		<div class="login-box">
-			<h1>Welcome to Super Cool Finance Tracker</h1>
-			<p>Please enter your credentials to continue.</p>
-			<form on:submit={handleLogin}>
+		<div class="signup-box">
+			<h1>Join Super Cool Finance Tracker</h1>
+			<p>Create your account to get started.</p>
+			<form on:submit={handleSignup}>
 				<div class="form-group">
 					<label for="username">Username</label>
 					<input
@@ -22,7 +28,17 @@
 						id="username"
 						bind:value={username}
 						required
-						placeholder="Enter your username"
+						placeholder="Choose a username"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input
+						type="email"
+						id="email"
+						bind:value={email}
+						required
+						placeholder="Enter your email"
 					/>
 				</div>
 				<div class="form-group">
@@ -32,13 +48,23 @@
 						id="password"
 						bind:value={password}
 						required
-						placeholder="Enter your password"
+						placeholder="Create a password"
 					/>
 				</div>
-				<button type="submit" class="login-btn"> Login </button>
+				<div class="form-group">
+					<label for="confirmPassword">Confirm Password</label>
+					<input
+						type="password"
+						id="confirmPassword"
+						bind:value={confirmPassword}
+						required
+						placeholder="Confirm your password"
+					/>
+				</div>
+				<button type="submit" class="signup-btn"> Sign Up </button>
 			</form>
-			<p class="signup-link">
-				Don't have an account? <a href="/Signup">Sign up here</a>
+			<p class="login-link">
+				Already have an account? <a href="/Login">Login here</a>
 			</p>
 		</div>
 	</div>
@@ -47,7 +73,7 @@
 <style>
 	main {
 		display: flex;
-		min-height: 100vh;
+		min-height: 100%;
 		justify-content: center;
 		align-items: center;
 		background-color: #303446;
@@ -111,7 +137,7 @@
 		color: #a5adce;
 	}
 
-	.login-btn {
+	.signup-btn {
 		padding: 12px 20px;
 		font-size: 16px;
 		border-radius: 8px;
@@ -122,22 +148,22 @@
 		font-weight: 500;
 	}
 
-	.login-btn:hover {
+	.signup-btn:hover {
 		background-color: #5b6eae;
 	}
 
-	.signup-link {
+	.login-link {
 		margin-top: 20px;
 		margin-bottom: 0;
 		font-size: 14px;
 	}
 
-	.signup-link a {
+	.login-link a {
 		color: #7289da;
 		text-decoration: none;
 	}
 
-	.signup-link a:hover {
+	.login-link a:hover {
 		text-decoration: underline;
 	}
 </style>
