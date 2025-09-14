@@ -12,7 +12,7 @@ NOTE: THE APP IS STILL BEING BUILT AND WORKED ON AND STILL LACKS LOTS OF FUNCTIO
 ## 🚀 Features
 
 -   **Dashboard Overview** 🟨
-    Get a quick snapshot of your financial health with charts and summaries.
+    Get a quick snapshot of your financial health with charts and summaries!
 
 -   **View Recent Transactions** 🟨
     View transactions from all accounts, filter them.
