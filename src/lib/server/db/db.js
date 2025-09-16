@@ -9,3 +9,6 @@ export const initDB = async () => {
 	});
 	return db;
 };
+
+export const dbPromise =
+	globalThis.__dbPromise ?? (globalThis.__dbPromise = initDB());

@@ -1,9 +1,8 @@
 -- Users table
 CREATE TABLE IF NOT EXISTS Users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  provider TEXT NOT NULL,
-  provider_user_id TEXT NOT NULL,
-  display_name TEXT NOT NULL,
+  username TEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL,
   email TEXT
 );
 
