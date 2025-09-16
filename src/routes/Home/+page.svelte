@@ -1,294 +1,294 @@
 <script>
-  import { onMount } from "svelte";
-  import * as echarts from "echarts";
-  import butterup from "butteruptoasts";
-  import "butteruptoasts/src/butterup.css";
+	import { onMount } from "svelte";
+	import * as echarts from "echarts";
+	import butterup from "butteruptoasts";
+	import "butteruptoasts/src/butterup.css";
 
-  export let data;
-  let greeting = "";
-  const userName = data.userName;
+	export let data;
+	let greeting = "";
+	const userName = data.user.username;
 
-  function getGreeting() {
-    const now = new Date();
-    const hour = now.getHours();
-    if (hour < 12) return "Good morning";
-    if (hour < 18) return "Good afternoon";
-    return "Good evening";
-  }
+	function getGreeting() {
+		const now = new Date();
+		const hour = now.getHours();
+		if (hour < 12) return "Good morning";
+		if (hour < 18) return "Good afternoon";
+		return "Good evening";
+	}
 
-  onMount(() => {
-    greeting = getGreeting();
+	onMount(() => {
+		greeting = getGreeting();
 
-    if (userName) {
-      butterup.toast({
-        title: "Login Successful✅",
-        message: `Welcome back, ${userName}`,
-        type: "success",
-        location: "top-right",
-        dismissable: true,
-      });
-    }
+		if (userName) {
+			butterup.toast({
+				title: "Login Successful✅",
+				message: `Welcome back, ${userName}`,
+				type: "success",
+				location: "top-right",
+				dismissable: true,
+			});
+		}
 
-    // Pie chart for transactions overview
-    const pieDom = document.getElementById("pie-chart");
-    const pieChart = echarts.init(pieDom, "dark");
-    const pieOption = {
-      backgroundColor: "transparent",
-      color: ["#a3d8f4", "#74c0fc", "#4dabf7"],
-      title: {
-        text: "Transactions Overview",
-        left: "center",
-      },
-      tooltip: {
-        trigger: "item",
-      },
-      legend: {
-        orient: "vertical",
-        left: "left",
-      },
-      series: [
-        {
-          name: "Percentage value",
-          type: "pie",
-          radius: "70%",
-          data: [
-            { value: 33, name: "Withdrawals" },
-            { value: 33, name: "Deposits" },
-            { value: 33, name: "Payments" },
-          ],
-          emphasis: {
-            itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: "rgba(0, 0, 0, 0.5)",
-            },
-          },
-        },
-      ],
-    };
-    pieChart.setOption(pieOption);
+		// Pie chart for transactions overview
+		const pieDom = document.getElementById("pie-chart");
+		const pieChart = echarts.init(pieDom, "dark");
+		const pieOption = {
+			backgroundColor: "transparent",
+			color: ["#a3d8f4", "#74c0fc", "#4dabf7"],
+			title: {
+				text: "Transactions Overview",
+				left: "center",
+			},
+			tooltip: {
+				trigger: "item",
+			},
+			legend: {
+				orient: "vertical",
+				left: "left",
+			},
+			series: [
+				{
+					name: "Percentage value",
+					type: "pie",
+					radius: "70%",
+					data: [
+						{ value: 33, name: "Withdrawals" },
+						{ value: 33, name: "Deposits" },
+						{ value: 33, name: "Payments" },
+					],
+					emphasis: {
+						itemStyle: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: "rgba(0, 0, 0, 0.5)",
+						},
+					},
+				},
+			],
+		};
+		pieChart.setOption(pieOption);
 
-    // Bar chart for account balances
-    const barDom = document.getElementById("bar-graph");
-    const barChart = echarts.init(barDom, "dark");
-    const barOption = {
-      backgroundColor: "transparent",
-      xAxis: {
-        type: "value",
-        axisLabel: { color: "#e0e6ed" },
-      },
-      yAxis: {
-        type: "category",
-        data: ["Checking", "Savings", "Credit Card"],
-        axisLabel: { color: "#e0e6ed" },
-      },
-      series: [
-        {
-          data: [1234.56, 5678.9, 123.45],
-          type: "bar",
-          itemStyle: {
-            color: function (params) {
-              const colors = ["#b9fbc0", "#98f5c0", "#70e9a8"];
-              return colors[params.dataIndex];
-            },
-          },
-          barWidth: "70%",
-        },
-      ],
-    };
-    barChart.setOption(barOption);
+		// Bar chart for account balances
+		const barDom = document.getElementById("bar-graph");
+		const barChart = echarts.init(barDom, "dark");
+		const barOption = {
+			backgroundColor: "transparent",
+			xAxis: {
+				type: "value",
+				axisLabel: { color: "#e0e6ed" },
+			},
+			yAxis: {
+				type: "category",
+				data: ["Checking", "Savings", "Credit Card"],
+				axisLabel: { color: "#e0e6ed" },
+			},
+			series: [
+				{
+					data: [1234.56, 5678.9, 123.45],
+					type: "bar",
+					itemStyle: {
+						color: function (params) {
+							const colors = ["#b9fbc0", "#98f5c0", "#70e9a8"];
+							return colors[params.dataIndex];
+						},
+					},
+					barWidth: "70%",
+				},
+			],
+		};
+		barChart.setOption(barOption);
 
-    window.addEventListener("resize", () => {
-      pieChart.resize();
-      barChart.resize();
-    });
-  });
+		window.addEventListener("resize", () => {
+			pieChart.resize();
+			barChart.resize();
+		});
+	});
 </script>
 
 <main>
-  <div class="container">
-    <div class="header">
-      <h1 id="greeting">{greeting}, {userName}!</h1>
-      <p>Glad to see you again, here is your overview today.</p>
-    </div>
+	<div class="container">
+		<div class="header">
+			<h1 id="greeting">{greeting}, {userName}!</h1>
+			<p>Glad to see you again, here is your overview today.</p>
+		</div>
 
-    <div class="parent">
-      <div class="recent-transactions">
-        <p><i class="fa-solid fa-wallet"></i> Recent Transactions</p>
-        <ul>
-          <li>Checking Account: + R500</li>
-          <li>Savings Account: + R200</li>
-          <li>Checking Account: - R150</li>
-          <li>Checking Account: -R100</li>
-        </ul>
-      </div>
-      <div class="recent-messages">
-        <p><i class="fa-solid fa-message"></i> Recent Messages</p>
-        <ul>
-          <li>Deposit of R500 made into checking Account.</li>
-          <li>Deposit of R200 made into Savings Account.</li>
-          <li>Payment of R150 made to Utility Company.</li>
-          <li>Account created today, welcome to the site!</li>
-        </ul>
-      </div>
-      <div class="account-balances">
-        <p><i class="fa-solid fa-chart-simple"></i> Account Balances</p>
-        <div id="bar-graph"></div>
-      </div>
-      <div class="pie-chart">
-        <p><i class="fa-solid fa-chart-pie"></i> Pie Chart</p>
-        <div class="chart-wrapper">
-          <div id="pie-chart"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+		<div class="parent">
+			<div class="recent-transactions">
+				<p><i class="fa-solid fa-wallet"></i> Recent Transactions</p>
+				<ul>
+					<li>Checking Account: + R500</li>
+					<li>Savings Account: + R200</li>
+					<li>Checking Account: - R150</li>
+					<li>Checking Account: -R100</li>
+				</ul>
+			</div>
+			<div class="recent-messages">
+				<p><i class="fa-solid fa-message"></i> Recent Messages</p>
+				<ul>
+					<li>Deposit of R500 made into checking Account.</li>
+					<li>Deposit of R200 made into Savings Account.</li>
+					<li>Payment of R150 made to Utility Company.</li>
+					<li>Account created today, welcome to the site!</li>
+				</ul>
+			</div>
+			<div class="account-balances">
+				<p><i class="fa-solid fa-chart-simple"></i> Account Balances</p>
+				<div id="bar-graph"></div>
+			</div>
+			<div class="pie-chart">
+				<p><i class="fa-solid fa-chart-pie"></i> Pie Chart</p>
+				<div class="chart-wrapper">
+					<div id="pie-chart"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
 
 <style>
-  h1 {
-    margin-top: 0;
-    color: #c6d0f5;
-    margin-bottom: 8px;
-  }
+	h1 {
+		margin-top: 0;
+		color: #c6d0f5;
+		margin-bottom: 8px;
+	}
 
-  .header p {
-    color: #a5adce;
-    margin-bottom: 40px;
-  }
+	.header p {
+		color: #a5adce;
+		margin-bottom: 40px;
+	}
 
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 15px;
-    color: #c6d0f5;
-  }
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 15px;
+		color: #c6d0f5;
+	}
 
-  .recent-transactions {
-    grid-column-start: 1;
-    grid-row-start: 1;
-    background-color: #292c3c;
-    color: #c6d0f5;
-    padding: 20px;
-    border: 1px solid #51576d;
-    border-radius: 10px;
-  }
+	.recent-transactions {
+		grid-column-start: 1;
+		grid-row-start: 1;
+		background-color: #292c3c;
+		color: #c6d0f5;
+		padding: 20px;
+		border: 1px solid #51576d;
+		border-radius: 10px;
+	}
 
-  .recent-transactions p {
-    margin: 0;
-    font-size: 20px;
-    color: #c6d0f5;
-  }
+	.recent-transactions p {
+		margin: 0;
+		font-size: 20px;
+		color: #c6d0f5;
+	}
 
-  .recent-transactions ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-  }
+	.recent-transactions ul {
+		list-style-type: none;
+		padding: 0;
+		margin-top: 10px;
+	}
 
-  .recent-transactions li {
-    margin-bottom: 10px;
-    background-color: #414559;
-    border: 1px solid #51576d;
-    border-radius: 5px;
-    padding: 10px 10px;
-    color: #a5adce;
-    font-size: 18px;
-  }
+	.recent-transactions li {
+		margin-bottom: 10px;
+		background-color: #414559;
+		border: 1px solid #51576d;
+		border-radius: 5px;
+		padding: 10px 10px;
+		color: #a5adce;
+		font-size: 18px;
+	}
 
-  .recent-messages {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    background-color: #292c3c;
-    color: #c6d0f5;
-    padding: 20px;
-    border: 1px solid #51576d;
-    border-radius: 10px;
-  }
+	.recent-messages {
+		grid-column-start: 1;
+		grid-row-start: 2;
+		background-color: #292c3c;
+		color: #c6d0f5;
+		padding: 20px;
+		border: 1px solid #51576d;
+		border-radius: 10px;
+	}
 
-  .recent-messages p {
-    margin: 0;
-    font-size: 20px;
-    color: #c6d0f5;
-  }
+	.recent-messages p {
+		margin: 0;
+		font-size: 20px;
+		color: #c6d0f5;
+	}
 
-  .recent-messages ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-  }
+	.recent-messages ul {
+		list-style-type: none;
+		padding: 0;
+		margin-top: 10px;
+	}
 
-  .recent-messages li {
-    margin-bottom: 10px;
-    background-color: #414559;
-    border: 1px solid #51576d;
-    border-radius: 5px;
-    padding: 10px 10px;
-    color: #a5adce;
-    font-size: 18px;
-  }
+	.recent-messages li {
+		margin-bottom: 10px;
+		background-color: #414559;
+		border: 1px solid #51576d;
+		border-radius: 5px;
+		padding: 10px 10px;
+		color: #a5adce;
+		font-size: 18px;
+	}
 
-  .account-balances {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    background-color: #292c3c;
-    color: #c6d0f5;
-    padding: 20px;
-    border: 1px solid #51576d;
-    border-radius: 10px;
-    height: 320px;
-    display: flex;
-    flex-direction: column;
-  }
+	.account-balances {
+		grid-column-start: 2;
+		grid-row-start: 1;
+		background-color: #292c3c;
+		color: #c6d0f5;
+		padding: 20px;
+		border: 1px solid #51576d;
+		border-radius: 10px;
+		height: 320px;
+		display: flex;
+		flex-direction: column;
+	}
 
-  .account-balances p {
-    margin: 0;
-    font-size: 20px;
-    color: #c6d0f5;
-  }
+	.account-balances p {
+		margin: 0;
+		font-size: 20px;
+		color: #c6d0f5;
+	}
 
-  .pie-chart {
-    grid-column-start: 2;
-    grid-row-start: 2;
-    background-color: #292c3c;
-    color: #c6d0f5;
-    padding: 20px;
-    border: 1px solid #51576d;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    height: 320px;
-  }
+	.pie-chart {
+		grid-column-start: 2;
+		grid-row-start: 2;
+		background-color: #292c3c;
+		color: #c6d0f5;
+		padding: 20px;
+		border: 1px solid #51576d;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		height: 320px;
+	}
 
-  .pie-chart p {
-    margin: 0 0 10px 0;
-    font-size: 20px;
-    text-align: left;
-    color: #c6d0f5;
-  }
+	.pie-chart p {
+		margin: 0 0 10px 0;
+		font-size: 20px;
+		text-align: left;
+		color: #c6d0f5;
+	}
 
-  .chart-wrapper {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-  }
+	.chart-wrapper {
+		flex: 1;
+		width: 100%;
+		display: flex;
+		align-items: stretch;
+		justify-content: stretch;
+	}
 
-  #pie-chart {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: transparent;
-  }
+	#pie-chart {
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-color: transparent;
+	}
 
-  #bar-graph {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    margin-top: 0;
-  }
+	#bar-graph {
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		margin-top: 0;
+	}
 </style>

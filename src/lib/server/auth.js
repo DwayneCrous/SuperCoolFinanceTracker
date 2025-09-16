@@ -9,3 +9,7 @@ export function setAuthCookies(cookies, userId) {
 export function isAuthenticated(cookies) {
 	return !!cookies.get("session");
 }
+
+export function getUserId(cookies) {
+	return cookies.get("session");
+}
