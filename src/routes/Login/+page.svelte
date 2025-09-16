@@ -1,4 +1,8 @@
 <script>
+	import { enhance } from "$app/forms";
+
+	export let form;
+
 	let username = "";
 	let password = "";
 
@@ -14,12 +18,12 @@
 		<div class="login-box">
 			<h1>Welcome to Super Cool Finance Tracker</h1>
 			<p>Please enter your credentials to continue.</p>
-			<form on:submit={handleLogin}>
+			<form method="POST" use:enhance>
 				<div class="form-group">
 					<label for="username">Username</label>
 					<input
 						type="text"
-						id="username"
+						name="username"
 						bind:value={username}
 						required
 						placeholder="Enter your username"
@@ -29,7 +33,7 @@
 					<label for="password">Password</label>
 					<input
 						type="password"
-						id="password"
+						name="password"
 						bind:value={password}
 						required
 						placeholder="Enter your password"
@@ -37,6 +41,11 @@
 				</div>
 				<button type="submit" class="login-btn"> Login </button>
 			</form>
+
+			{#if form?.error}
+				<p class="error-message">{form.error}</p>
+			{/if}
+
 			<p class="signup-link">
 				Don't have an account? <a href="/Signup">Sign up here</a>
 			</p>
@@ -139,5 +148,16 @@
 
 	.signup-link a:hover {
 		text-decoration: underline;
+	}
+
+	.error-message {
+		margin-top: 15px;
+		margin-bottom: 10px;
+		padding: 10px;
+		background-color: #f87171;
+		color: white;
+		border-radius: 8px;
+		font-size: 14px;
+		text-align: center;
 	}
 </style>

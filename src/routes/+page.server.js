@@ -1,5 +1,8 @@
-import { redirect } from '@sveltejs/kit';
+import { isAuthenticated } from "$lib/server/auth.js";
+import { redirect } from "@sveltejs/kit";
 
-export const load = async () => {
-  throw redirect(307, '/Login');
+export const load = async ({ cookies }) => {
+	if (!isAuthenticated(cookies)) {
+		throw redirect(303, "/Login");
+	}
 };

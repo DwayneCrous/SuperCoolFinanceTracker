@@ -1,18 +1,22 @@
 <script>
+	import { enhance } from "$app/forms";
+
+	export let form;
+
 	let username = "";
 	let email = "";
 	let password = "";
 	let confirmPassword = "";
 
-	function handleSignup(event) {
-		event.preventDefault();
-		if (password !== confirmPassword) {
-			alert("Passwords do not match");
-			return;
-		}
-		// Handle signup logic here
-		console.log("Signup attempt:", { username, email, password });
-	}
+	// function handleSignup(event) {
+	// 	event.preventDefault();
+	// 	if (password !== confirmPassword) {
+	// 		alert("Passwords do not match");
+	// 		return;
+	// 	}
+	// 	// Handle signup logic here
+	// 	console.log("Signup attempt:", { username, email, password });
+	// }
 </script>
 
 <main>
@@ -20,12 +24,12 @@
 		<div class="signup-box">
 			<h1>Join Super Cool Finance Tracker</h1>
 			<p>Create your account to get started.</p>
-			<form on:submit={handleSignup}>
+			<form method="POST" use:enhance>
 				<div class="form-group">
 					<label for="username">Username</label>
 					<input
 						type="text"
-						id="username"
+						name="username"
 						bind:value={username}
 						required
 						placeholder="Choose a username"
@@ -35,7 +39,7 @@
 					<label for="email">Email</label>
 					<input
 						type="email"
-						id="email"
+						name="email"
 						bind:value={email}
 						required
 						placeholder="Enter your email"
@@ -45,7 +49,7 @@
 					<label for="password">Password</label>
 					<input
 						type="password"
-						id="password"
+						name="password"
 						bind:value={password}
 						required
 						placeholder="Create a password"
@@ -55,7 +59,7 @@
 					<label for="confirmPassword">Confirm Password</label>
 					<input
 						type="password"
-						id="confirmPassword"
+						name="confirmPassword"
 						bind:value={confirmPassword}
 						required
 						placeholder="Confirm your password"
@@ -63,6 +67,9 @@
 				</div>
 				<button type="submit" class="signup-btn"> Sign Up </button>
 			</form>
+			{#if form?.error}
+				<p class="error-message">{form.error}</p>
+			{/if}
 			<p class="login-link">
 				Already have an account? <a href="/Login">Login here</a>
 			</p>
